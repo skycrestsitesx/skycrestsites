@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCrest Sites</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #111;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding: 20px;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .btn {
+      background: #0284c7;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      color: #555;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .box {
+      background: linear-gradient(to bottom right, #38bdf8, #e0f2fe);
+      padding: 30px;
+      border-radius: 16px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .section {
+      padding: 60px 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #eee;
+      color: #777;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SkyCrest Sites</div>
+  <a href="#contact" class="btn">Get a Quote</a>
+</header>
+
+<section class="hero container">
+  <div>
+    <h1>Clean, premium websites that make your business look better.</h1>
+    <p>We build modern websites for local businesses that want to look professional and get more customers.</p>
+    <br>
+    <a href="#contact" class="btn">Start Project</a>
+  </div>
+
+  <div class="box">
+    <div class="card">
+      <h3>Modern Website</h3>
+      <p>Simple. Clean. Professional.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <h2>Services</h2>
+  <div class="grid grid-3">
+    <div class="card">Custom Website Design</div>
+    <div class="card">Website Redesign</div>
+    <div class="card">Local SEO Setup</div>
+  </div>
+</section>
+
+<section class="section container">
+  <h2>Process</h2>
+  <div class="grid grid-3">
+    <div class="card">Tell us about your business</div>
+    <div class="card">We build your site</div>
+    <div class="card">Launch and grow</div>
+  </div>
+</section>
+
+<section id="contact" class="section container">
+  <h2>Start Your Project</h2>
+  <p>Email us to get started.</p>
+  <br>
+  <a href="mailto:hello@skycrestsites.us" class="btn">hello@skycrestsites.us</a>
+</section>
+
+<footer>
+  SkyCrest Sites © 2026
+</footer>
+
+</body>
+</html>
