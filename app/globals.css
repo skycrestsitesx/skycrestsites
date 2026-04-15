@@ -2,18 +2,22 @@
   --bg-left: #e7e1ce;
   --bg-mid: #f1e7d3;
   --bg-right: #f5efe0;
+
   --panel: #2a2c30;
   --panel-2: #232529;
   --panel-3: #34373c;
   --panel-4: #1e2024;
+
   --text: #f7f1e7;
   --muted: #c7beb1;
   --muted-2: #a89f92;
   --line: rgba(255, 255, 255, 0.08);
+
   --gold: #dcc78f;
   --gold-soft: #f3e8c9;
   --gold-deep: #bf9c4d;
   --gold-glow: rgba(220, 199, 143, 0.18);
+
   --shadow: 0 26px 60px rgba(0, 0, 0, 0.24);
   --radius-xl: 30px;
   --radius-lg: 22px;
@@ -79,7 +83,7 @@ textarea {
 }
 
 .top-note .big img {
-  height: 64px;
+  height: 74px;
   width: auto;
   object-fit: contain;
 }
@@ -136,21 +140,21 @@ textarea {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
-  min-width: 220px;
+  gap: 18px;
+  min-width: 300px;
 }
 
 .brand-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
   object-fit: contain;
   background: transparent;
   flex: 0 0 auto;
 }
 
 .brand-word {
-  height: 30px;
+  height: 42px;
   width: auto;
   object-fit: contain;
 }
@@ -179,24 +183,24 @@ textarea {
 }
 
 .nav-cta {
-  min-width: 190px;
+  min-width: 240px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
-  padding: 0 16px;
+  min-height: 48px;
+  padding: 0 20px;
   border: 1px solid rgba(243, 232, 201, 0.38);
   color: var(--gold-soft);
   background: transparent;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   transition: 160ms ease;
   cursor: pointer;
@@ -225,13 +229,26 @@ textarea {
   );
 }
 
+.mobile-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(243, 232, 201, 0.35);
+  color: var(--gold-soft);
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
 .hero {
   display: grid;
   grid-template-columns: 1.02fr 0.98fr;
   gap: 30px;
   align-items: center;
   min-height: 610px;
-  padding: 18px 0 84px;
+  padding: 18px 0 92px;
 }
 
 .hero-copy {
@@ -253,7 +270,7 @@ textarea {
 }
 
 .hero-logo-title img {
-  height: 78px;
+  height: 88px;
   width: auto;
   object-fit: contain;
   max-width: 100%;
@@ -338,45 +355,8 @@ textarea {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 30% 20%, rgba(255, 193, 7, 0.1), transparent 18%),
-    radial-gradient(circle at 70% 50%, rgba(255, 145, 0, 0.08), transparent 18%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 35%);
   pointer-events: none;
-}
-
-.orbital-ring,
-.orbital-ring::before,
-.orbital-ring::after {
-  position: absolute;
-  content: "";
-  border-radius: 50%;
-  border: 2px solid rgba(220, 199, 143, 0.9);
-}
-
-.orbital-ring {
-  width: 290px;
-  height: 100px;
-  top: 94px;
-  right: 30px;
-  transform: rotate(10deg);
-}
-
-.orbital-ring::before {
-  width: 320px;
-  height: 118px;
-  top: -10px;
-  left: -12px;
-  transform: rotate(-28deg);
-  border-color: rgba(243, 232, 201, 0.88);
-}
-
-.orbital-ring::after {
-  width: 252px;
-  height: 90px;
-  top: 8px;
-  left: 18px;
-  transform: rotate(30deg);
-  border-color: rgba(191, 156, 77, 0.82);
 }
 
 .helix-image-wrap {
@@ -393,7 +373,13 @@ textarea {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.18), transparent 24%, transparent 76%, rgba(0, 0, 0, 0.2)),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.18),
+      transparent 24%,
+      transparent 76%,
+      rgba(0, 0, 0, 0.2)
+    ),
     radial-gradient(circle at 40% 30%, rgba(255, 188, 35, 0.08), transparent 30%);
   pointer-events: none;
 }
@@ -441,7 +427,7 @@ textarea {
 }
 
 .section {
-  padding: 76px 0;
+  padding: 88px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -772,6 +758,95 @@ textarea {
   color: white;
 }
 
+/* Intro animation */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: linear-gradient(
+    90deg,
+    var(--bg-left) 0%,
+    var(--bg-mid) 52%,
+    var(--bg-right) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: introFadeOut 0.6s ease 2s forwards;
+}
+
+.intro-logo-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 360px;
+  min-height: 140px;
+}
+
+.intro-wordmark {
+  height: 108px;
+  width: auto;
+  opacity: 0;
+  transform: scale(1.08);
+  animation: wordmarkInOut 2s ease forwards;
+}
+
+.intro-icon {
+  position: absolute;
+  height: 74px;
+  width: 74px;
+  opacity: 0;
+  transform: scale(0.6);
+  animation: iconReveal 2s ease forwards;
+}
+
+@keyframes wordmarkInOut {
+  0% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+  18% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(0.52);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.42);
+  }
+}
+
+@keyframes iconReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  45% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  72% {
+    opacity: 1;
+    transform: scale(0.88);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes introFadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
 @media (max-width: 1080px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -796,11 +871,21 @@ textarea {
   }
 
   .top-note .big img {
-    height: 46px;
+    height: 52px;
+  }
+
+  .brand {
+    min-width: auto;
+    gap: 12px;
+  }
+
+  .brand-icon {
+    width: 48px;
+    height: 48px;
   }
 
   .brand-word {
-    height: 24px;
+    height: 28px;
   }
 
   .nav-links {
@@ -818,12 +903,16 @@ textarea {
     z-index: 20;
   }
 
-  .nav-cta {
-    min-width: auto;
-  }
-
   .nav-links.open {
     display: flex;
+  }
+
+  .mobile-toggle {
+    display: inline-flex;
+  }
+
+  .nav-cta .button {
+    display: none;
   }
 
   .hero,
@@ -842,7 +931,7 @@ textarea {
   }
 
   .hero-logo-title img {
-    height: 56px;
+    height: 58px;
   }
 
   .hero h1 {
@@ -862,7 +951,7 @@ textarea {
   }
 
   .section {
-    padding: 58px 0;
+    padding: 60px 0;
   }
 
   .section-head {
@@ -877,5 +966,14 @@ textarea {
   .footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .intro-wordmark {
+    height: 72px;
+  }
+
+  .intro-icon {
+    width: 58px;
+    height: 58px;
   }
 }
