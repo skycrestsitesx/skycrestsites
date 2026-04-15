@@ -83,7 +83,7 @@ textarea {
 }
 
 .top-note .big img {
-  height: 92px;
+  height: 94px;
   width: auto;
   object-fit: contain;
 }
@@ -140,13 +140,13 @@ textarea {
 .brand {
   display: flex;
   align-items: center;
-  gap: 26px;
-  min-width: 380px;
+  gap: 30px;
+  min-width: 460px;
 }
 
 .brand-icon {
-  width: 88px;
-  height: 88px;
+  width: 108px;
+  height: 108px;
   border-radius: 12px;
   object-fit: contain;
   background: transparent;
@@ -154,7 +154,7 @@ textarea {
 }
 
 .brand-word {
-  height: 62px;
+  height: 78px;
   width: auto;
   object-fit: contain;
 }
@@ -760,92 +760,146 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: introFadeOut 0.7s ease 2.7s forwards;
+  animation: introFadeOut 0.6s ease 2.95s forwards;
 }
 
 .intro-stage {
   position: relative;
-  width: min(92vw, 1100px);
-  height: min(34vw, 260px);
+  width: min(94vw, 1180px);
+  height: min(34vw, 320px);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.intro-wordmark-shell {
+.intro-lockup {
+  position: relative;
+  width: min(80vw, 980px);
+  height: min(18vw, 210px);
+}
+
+.intro-wordmark-full,
+.intro-wordmark-tail,
+.intro-s-anchor,
+.intro-s-final {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: wordmarkCollapse 2.3s cubic-bezier(0.22, 0.8, 0.22, 1) forwards;
-  transform-origin: center center;
+  margin: auto 0;
 }
 
-.intro-wordmark {
-  width: min(78vw, 920px);
+.intro-wordmark-full {
+  width: min(80vw, 980px);
   height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.08));
-}
-
-.intro-icon-shell {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.intro-icon {
-  width: min(14vw, 150px);
-  height: min(14vw, 150px);
-  object-fit: contain;
   opacity: 0;
-  transform: scale(0.22);
-  animation: iconTakeover 2.3s cubic-bezier(0.22, 0.8, 0.22, 1) forwards;
+  transform: scale(1.02);
+  animation: introWordmarkAppear 0.45s ease 0.08s forwards;
+  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.08));
+}
+
+.intro-wordmark-tail-mask {
+  position: absolute;
+  left: 10.8%;
+  top: 0;
+  width: 89.2%;
+  height: 100%;
+  overflow: hidden;
+  transform-origin: left center;
+  animation: introTailFold 1.4s cubic-bezier(0.2, 0.8, 0.18, 1) 0.82s forwards;
+}
+
+.intro-wordmark-tail {
+  width: min(80vw, 980px);
+  height: auto;
+  left: calc(-10.8% * min(80vw, 980px));
+  opacity: 0;
+  animation: introTailVisible 0.01s linear 0.82s forwards;
+  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.08));
+}
+
+.intro-s-anchor {
+  width: min(18vw, 210px);
+  height: min(18vw, 210px);
+  left: 0;
+  right: auto;
+  opacity: 0;
+  transform: scale(0.92);
+  animation: introSAnchorIn 0.36s ease 0.12s forwards;
+  filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.08));
+}
+
+.intro-s-final {
+  width: min(18vw, 210px);
+  height: min(18vw, 210px);
+  left: 0;
+  right: auto;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: introSFinalSettle 0.7s cubic-bezier(0.2, 0.9, 0.25, 1) 1.85s forwards;
   filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.1));
 }
 
-@keyframes wordmarkCollapse {
+@keyframes introWordmarkAppear {
   0% {
     opacity: 0;
-    transform: scale(1.12);
-  }
-  12% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  56% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  78% {
-    opacity: 1;
-    transform: scale(0.42);
+    transform: scale(1.02);
   }
   100% {
-    opacity: 0;
-    transform: scale(0.22);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-@keyframes iconTakeover {
+@keyframes introSAnchorIn {
   0% {
     opacity: 0;
-    transform: scale(0.16);
+    transform: scale(0.92);
   }
-  46% {
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes introTailVisible {
+  0% {
     opacity: 0;
-    transform: scale(0.16);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes introTailFold {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scaleX(1);
+    filter: blur(0);
+  }
+  35% {
+    opacity: 1;
+    transform: translateX(-4%) scaleX(0.92);
+    filter: blur(0.2px);
   }
   68% {
     opacity: 1;
-    transform: scale(0.72);
+    transform: translateX(-18%) scaleX(0.52);
+    filter: blur(0.8px);
   }
-  84% {
+  100% {
+    opacity: 0;
+    transform: translateX(-30%) scaleX(0.08);
+    filter: blur(1.2px);
+  }
+}
+
+@keyframes introSFinalSettle {
+  0% {
+    opacity: 0;
+    transform: scale(0.78);
+  }
+  55% {
     opacity: 1;
-    transform: scale(1.06);
+    transform: scale(1.08);
   }
   100% {
     opacity: 1;
@@ -872,6 +926,20 @@ textarea {
   .split-cta {
     grid-template-columns: 1fr;
   }
+
+  .brand {
+    min-width: 360px;
+    gap: 22px;
+  }
+
+  .brand-icon {
+    width: 92px;
+    height: 92px;
+  }
+
+  .brand-word {
+    height: 66px;
+  }
 }
 
 @media (max-width: 840px) {
@@ -885,7 +953,7 @@ textarea {
   }
 
   .top-note .big img {
-    height: 64px;
+    height: 66px;
   }
 
   .brand {
@@ -894,12 +962,12 @@ textarea {
   }
 
   .brand-icon {
-    width: 74px;
-    height: 74px;
+    width: 72px;
+    height: 72px;
   }
 
   .brand-word {
-    height: 50px;
+    height: 48px;
   }
 
   .nav-links {
@@ -979,16 +1047,28 @@ textarea {
   }
 
   .intro-stage {
-    width: min(94vw, 760px);
+    width: min(96vw, 760px);
     height: 180px;
   }
 
-  .intro-wordmark {
-    width: min(90vw, 700px);
+  .intro-lockup {
+    width: min(92vw, 720px);
+    height: 110px;
   }
 
-  .intro-icon {
+  .intro-wordmark-full,
+  .intro-wordmark-tail {
+    width: min(92vw, 720px);
+  }
+
+  .intro-s-anchor,
+  .intro-s-final {
     width: 96px;
     height: 96px;
+  }
+
+  .intro-wordmark-tail-mask {
+    left: 13.5%;
+    width: 86.5%;
   }
 }

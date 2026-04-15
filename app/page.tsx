@@ -9,7 +9,7 @@ export default function HomePage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowIntro(false);
-    }, 3200);
+    }, 3400);
 
     return () => clearTimeout(timer);
   }, []);
@@ -24,17 +24,26 @@ export default function HomePage() {
       {showIntro && (
         <div className="intro-overlay" aria-hidden="true">
           <div className="intro-stage">
-            <div className="intro-wordmark-shell">
+            <div className="intro-lockup">
               <img
-                className="intro-wordmark"
+                className="intro-s-anchor"
+                src="/logo-icon.png"
+                alt=""
+              />
+              <img
+                className="intro-wordmark-full"
                 src="/logo-wordmark.png"
                 alt=""
               />
-            </div>
-
-            <div className="intro-icon-shell">
+              <div className="intro-wordmark-tail-mask">
+                <img
+                  className="intro-wordmark-tail"
+                  src="/logo-wordmark.png"
+                  alt=""
+                />
+              </div>
               <img
-                className="intro-icon"
+                className="intro-s-final"
                 src="/logo-icon.png"
                 alt=""
               />
