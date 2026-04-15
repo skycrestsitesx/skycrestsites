@@ -9,7 +9,7 @@ export default function HomePage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowIntro(false);
-    }, 2600);
+    }, 3200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -22,18 +22,23 @@ export default function HomePage() {
   return (
     <>
       {showIntro && (
-        <div className="intro-overlay">
-          <div className="intro-logo-wrap">
-            <img
-              className="intro-wordmark"
-              src="/logo-wordmark.png"
-              alt="SkyCrest logo"
-            />
-            <img
-              className="intro-icon"
-              src="/logo-icon.png"
-              alt="SkyCrest icon"
-            />
+        <div className="intro-overlay" aria-hidden="true">
+          <div className="intro-stage">
+            <div className="intro-wordmark-shell">
+              <img
+                className="intro-wordmark"
+                src="/logo-wordmark.png"
+                alt=""
+              />
+            </div>
+
+            <div className="intro-icon-shell">
+              <img
+                className="intro-icon"
+                src="/logo-icon.png"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       )}
@@ -62,7 +67,11 @@ export default function HomePage() {
             </a>
 
             <nav className={`nav-links ${mobileOpen ? "open" : ""}`}>
-              <a className="active" href="#top" onClick={() => setMobileOpen(false)}>
+              <a
+                className="active"
+                href="#top"
+                onClick={() => setMobileOpen(false)}
+              >
                 Home
               </a>
               <a href="#about" onClick={() => setMobileOpen(false)}>
@@ -90,6 +99,7 @@ export default function HomePage() {
                 className="mobile-toggle"
                 onClick={() => setMobileOpen((prev) => !prev)}
                 aria-label="Toggle menu"
+                type="button"
               >
                 {mobileOpen ? "✕" : "☰"}
               </button>
@@ -98,11 +108,9 @@ export default function HomePage() {
 
           <section className="hero" id="top">
             <div className="hero-copy">
-              <span className="eyebrow">Elegant websites for modern businesses</span>
-
-              <div className="hero-logo-title">
-                <img src="/logo-wordmark.png" alt="SkyCrest logo" />
-              </div>
+              <span className="eyebrow">
+                Elegant websites for modern businesses
+              </span>
 
               <h1>
                 <span className="tone-gold">Design</span>
@@ -165,9 +173,9 @@ export default function HomePage() {
                 <h3>Modern, intentional, and quietly premium.</h3>
                 <p>
                   This style is designed to feel less like a generic builder
-                  template and more like a custom creative studio site. The visual
-                  language stays restrained, spacious, and clean while still
-                  feeling memorable.
+                  template and more like a custom creative studio site. The
+                  visual language stays restrained, spacious, and clean while
+                  still feeling memorable.
                 </p>
               </div>
 
@@ -222,8 +230,8 @@ export default function HomePage() {
                 <div className="service-icon" />
                 <h3>Local SEO Setup</h3>
                 <p>
-                  Build the basic structure your business needs to show up clearly
-                  in local search.
+                  Build the basic structure your business needs to show up
+                  clearly in local search.
                 </p>
               </div>
 
@@ -231,8 +239,8 @@ export default function HomePage() {
                 <div className="service-icon" />
                 <h3>Fast Launch</h3>
                 <p>
-                  Get a polished site live quickly with a straightforward process
-                  and less friction.
+                  Get a polished site live quickly with a straightforward
+                  process and less friction.
                 </p>
               </div>
             </div>
@@ -242,8 +250,8 @@ export default function HomePage() {
             <div className="section-head">
               <h2>Sample Work</h2>
               <p>
-                Placeholder concepts for now. You can replace these later with real
-                client projects, screenshots, and case studies.
+                Placeholder concepts for now. You can replace these later with
+                real client projects, screenshots, and case studies.
               </p>
             </div>
 
@@ -255,7 +263,9 @@ export default function HomePage() {
                       <span>Dental</span>
                       <span>Placeholder</span>
                     </div>
-                    <div className="mini-title">Bright, clean, high-trust care.</div>
+                    <div className="mini-title">
+                      Bright, clean, high-trust care.
+                    </div>
                     <div className="mini-lines">
                       <span />
                       <span />
@@ -301,7 +311,9 @@ export default function HomePage() {
                       <span>Home Services</span>
                       <span>Placeholder</span>
                     </div>
-                    <div className="mini-title">Clear offer. Faster quote flow.</div>
+                    <div className="mini-title">
+                      Clear offer. Faster quote flow.
+                    </div>
                     <div className="mini-lines">
                       <span />
                       <span />
@@ -332,8 +344,8 @@ export default function HomePage() {
                 <div className="process-num">01</div>
                 <h3>Tell us about your business</h3>
                 <p>
-                  Share what you do, who you serve, and the kind of impression you
-                  want your website to create.
+                  Share what you do, who you serve, and the kind of impression
+                  you want your website to create.
                 </p>
               </div>
 
@@ -341,8 +353,8 @@ export default function HomePage() {
                 <div className="process-num">02</div>
                 <h3>We design and build</h3>
                 <p>
-                  We shape the layout, structure, and visual style into a cleaner
-                  and more elegant online presence.
+                  We shape the layout, structure, and visual style into a
+                  cleaner and more elegant online presence.
                 </p>
               </div>
 
@@ -361,8 +373,8 @@ export default function HomePage() {
             <div className="section-head">
               <h2>FAQ</h2>
               <p>
-                Basic placeholder answers for now. These can be replaced with your
-                real operating details later.
+                Basic placeholder answers for now. These can be replaced with
+                your real operating details later.
               </p>
             </div>
 
@@ -370,8 +382,8 @@ export default function HomePage() {
               <div className="card">
                 <h3>How long does a project take?</h3>
                 <p>
-                  Smaller sites move faster, while more advanced pages and custom
-                  content take longer.
+                  Smaller sites move faster, while more advanced pages and
+                  custom content take longer.
                 </p>
               </div>
 
@@ -386,8 +398,8 @@ export default function HomePage() {
               <div className="card">
                 <h3>Can this be updated later?</h3>
                 <p>
-                  Yes. The structure is simple enough to edit as your business and
-                  offer evolve.
+                  Yes. The structure is simple enough to edit as your business
+                  and offer evolve.
                 </p>
               </div>
 
@@ -405,8 +417,8 @@ export default function HomePage() {
             <div className="section-head">
               <h2>Contact</h2>
               <p>
-                Keep this as a placeholder for now, then connect it to a real form
-                or CRM later.
+                Keep this as a placeholder for now, then connect it to a real
+                form or CRM later.
               </p>
             </div>
 
@@ -430,7 +442,11 @@ export default function HomePage() {
                   <div className="form-grid">
                     <input type="text" placeholder="Name" />
                     <input type="email" placeholder="Email" />
-                    <input className="full" type="text" placeholder="Business name" />
+                    <input
+                      className="full"
+                      type="text"
+                      placeholder="Business name"
+                    />
                     <textarea
                       className="full"
                       placeholder="Tell us about your project"

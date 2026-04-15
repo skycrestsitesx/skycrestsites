@@ -83,7 +83,7 @@ textarea {
 }
 
 .top-note .big img {
-  height: 88px;
+  height: 92px;
   width: auto;
   object-fit: contain;
 }
@@ -140,21 +140,21 @@ textarea {
 .brand {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 26px;
   min-width: 380px;
 }
 
 .brand-icon {
-  width: 74px;
-  height: 74px;
-  border-radius: 14px;
+  width: 88px;
+  height: 88px;
+  border-radius: 12px;
   object-fit: contain;
   background: transparent;
   flex: 0 0 auto;
 }
 
 .brand-word {
-  height: 54px;
+  height: 62px;
   width: auto;
   object-fit: contain;
 }
@@ -183,7 +183,7 @@ textarea {
 }
 
 .nav-cta {
-  min-width: 250px;
+  min-width: 240px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -263,18 +263,6 @@ textarea {
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 11px;
-}
-
-.hero-logo-title {
-  margin-bottom: 20px;
-}
-
-.hero-logo-title img {
-  height: 88px;
-  width: auto;
-  object-fit: contain;
-  max-width: 100%;
-  filter: drop-shadow(0 0 10px rgba(220, 199, 143, 0.06));
 }
 
 .hero h1 {
@@ -758,6 +746,7 @@ textarea {
   color: white;
 }
 
+/* Intro animation */
 .intro-overlay {
   position: fixed;
   inset: 0;
@@ -771,66 +760,92 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: introFadeOut 0.6s ease 2s forwards;
+  animation: introFadeOut 0.7s ease 2.7s forwards;
 }
 
-.intro-logo-wrap {
+.intro-stage {
   position: relative;
+  width: min(92vw, 1100px);
+  height: min(34vw, 260px);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 700px;
-  min-height: 240px;
+}
+
+.intro-wordmark-shell {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: wordmarkCollapse 2.3s cubic-bezier(0.22, 0.8, 0.22, 1) forwards;
+  transform-origin: center center;
 }
 
 .intro-wordmark {
-  height: 190px;
-  width: auto;
-  opacity: 0;
-  transform: scale(1.08);
-  animation: wordmarkInOut 2s ease forwards;
+  width: min(78vw, 920px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.08));
+}
+
+.intro-icon-shell {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .intro-icon {
-  position: absolute;
-  height: 120px;
-  width: 120px;
+  width: min(14vw, 150px);
+  height: min(14vw, 150px);
+  object-fit: contain;
   opacity: 0;
-  transform: scale(0.6);
-  animation: iconReveal 2s ease forwards;
+  transform: scale(0.22);
+  animation: iconTakeover 2.3s cubic-bezier(0.22, 0.8, 0.22, 1) forwards;
+  filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.1));
 }
 
-@keyframes wordmarkInOut {
+@keyframes wordmarkCollapse {
   0% {
     opacity: 0;
-    transform: scale(1.08);
+    transform: scale(1.12);
   }
-  18% {
+  12% {
     opacity: 1;
     transform: scale(1);
   }
-  65% {
+  56% {
     opacity: 1;
-    transform: scale(0.52);
+    transform: scale(1);
+  }
+  78% {
+    opacity: 1;
+    transform: scale(0.42);
   }
   100% {
     opacity: 0;
-    transform: scale(0.42);
+    transform: scale(0.22);
   }
 }
 
-@keyframes iconReveal {
+@keyframes iconTakeover {
   0% {
     opacity: 0;
-    transform: scale(0.6);
+    transform: scale(0.16);
   }
-  45% {
+  46% {
     opacity: 0;
-    transform: scale(0.6);
+    transform: scale(0.16);
   }
-  72% {
+  68% {
     opacity: 1;
-    transform: scale(0.88);
+    transform: scale(0.72);
+  }
+  84% {
+    opacity: 1;
+    transform: scale(1.06);
   }
   100% {
     opacity: 1;
@@ -870,21 +885,21 @@ textarea {
   }
 
   .top-note .big img {
-    height: 52px;
+    height: 64px;
   }
 
   .brand {
     min-width: auto;
-    gap: 12px;
+    gap: 14px;
   }
 
   .brand-icon {
-    width: 52px;
-    height: 52px;
+    width: 74px;
+    height: 74px;
   }
 
   .brand-word {
-    height: 30px;
+    height: 50px;
   }
 
   .nav-links {
@@ -929,10 +944,6 @@ textarea {
     padding-bottom: 56px;
   }
 
-  .hero-logo-title img {
-    height: 58px;
-  }
-
   .hero h1 {
     font-size: 56px;
   }
@@ -967,17 +978,17 @@ textarea {
     align-items: flex-start;
   }
 
-  .intro-logo-wrap {
-    min-width: 320px;
-    min-height: 140px;
+  .intro-stage {
+    width: min(94vw, 760px);
+    height: 180px;
   }
 
   .intro-wordmark {
-    height: 110px;
+    width: min(90vw, 700px);
   }
 
   .intro-icon {
-    width: 76px;
-    height: 76px;
+    width: 96px;
+    height: 96px;
   }
 }
