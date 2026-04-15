@@ -9,7 +9,7 @@ export default function HomePage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowIntro(false);
-    }, 3400);
+    }, 3600);
 
     return () => clearTimeout(timer);
   }, []);
@@ -26,27 +26,33 @@ export default function HomePage() {
           <div className="intro-stage">
             <div className="intro-lockup">
               <img
-                className="intro-s-anchor"
-                src="/logo-icon.png"
-                alt=""
-              />
-              <img
-                className="intro-wordmark-full"
+                className="intro-wordmark-base"
                 src="/logo-wordmark.png"
                 alt=""
               />
-              <div className="intro-wordmark-tail-mask">
-                <img
-                  className="intro-wordmark-tail"
-                  src="/logo-wordmark.png"
-                  alt=""
-                />
+
+              <img className="intro-s-static" src="/logo-icon.png" alt="" />
+
+              <div className="intro-tail intro-tail-1">
+                <img src="/logo-wordmark.png" alt="" />
               </div>
-              <img
-                className="intro-s-final"
-                src="/logo-icon.png"
-                alt=""
-              />
+              <div className="intro-tail intro-tail-2">
+                <img src="/logo-wordmark.png" alt="" />
+              </div>
+              <div className="intro-tail intro-tail-3">
+                <img src="/logo-wordmark.png" alt="" />
+              </div>
+              <div className="intro-tail intro-tail-4">
+                <img src="/logo-wordmark.png" alt="" />
+              </div>
+              <div className="intro-tail intro-tail-5">
+                <img src="/logo-wordmark.png" alt="" />
+              </div>
+              <div className="intro-tail intro-tail-6">
+                <img src="/logo-wordmark.png" alt="" />
+              </div>
+
+              <img className="intro-s-final" src="/logo-icon.png" alt="" />
             </div>
           </div>
         </div>
@@ -128,9 +134,9 @@ export default function HomePage() {
               </h1>
 
               <p>
-                SkyCrest Sites creates refined websites for local businesses that
-                want a cleaner presence, stronger credibility, and a more modern
-                first impression.
+                SkyCrest Sites creates refined websites for local businesses
+                that want a cleaner presence, stronger credibility, and a more
+                modern first impression.
               </p>
 
               <div className="hero-actions">
