@@ -9,7 +9,7 @@ export default function HomePage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowIntro(false);
-    }, 3600);
+    }, 3400);
 
     return () => clearTimeout(timer);
   }, []);
@@ -24,35 +24,22 @@ export default function HomePage() {
       {showIntro && (
         <div className="intro-overlay" aria-hidden="true">
           <div className="intro-stage">
-            <div className="intro-lockup">
+            <div className="intro-center-wrap">
               <img
-                className="intro-wordmark-base"
+                className="intro-wordmark-main"
                 src="/logo-wordmark.png"
                 alt=""
               />
 
-              <img className="intro-s-static" src="/logo-icon.png" alt="" />
-
-              <div className="intro-tail intro-tail-1">
-                <img src="/logo-wordmark.png" alt="" />
-              </div>
-              <div className="intro-tail intro-tail-2">
-                <img src="/logo-wordmark.png" alt="" />
-              </div>
-              <div className="intro-tail intro-tail-3">
-                <img src="/logo-wordmark.png" alt="" />
-              </div>
-              <div className="intro-tail intro-tail-4">
-                <img src="/logo-wordmark.png" alt="" />
-              </div>
-              <div className="intro-tail intro-tail-5">
-                <img src="/logo-wordmark.png" alt="" />
-              </div>
-              <div className="intro-tail intro-tail-6">
-                <img src="/logo-wordmark.png" alt="" />
+              <div className="intro-collapse-shell">
+                <img
+                  className="intro-wordmark-collapse"
+                  src="/logo-wordmark.png"
+                  alt=""
+                />
               </div>
 
-              <img className="intro-s-final" src="/logo-icon.png" alt="" />
+              <img className="intro-s-end" src="/logo-icon.png" alt="" />
             </div>
           </div>
         </div>
